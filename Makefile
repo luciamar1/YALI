@@ -1,3 +1,10 @@
+
+#so = libft.so
+
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+#	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	
 NAME = libft.a
 
 SRC = ft_bzero.c  ft_isalpha.c ft_isdigit.c ft_memcpy.c ft_memset.c ft_strlcpy.c \
@@ -29,20 +36,3 @@ clbonus:
 bonus: $(OBJ) $(BONUS_OBJ)
 	gcc -c $(FLAGS) $(SRC)
 	ar rcs  $(NAME) $(OBJ) $(BONUS_OBJ)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

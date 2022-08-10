@@ -8,8 +8,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     if (!s)
         return (NULL);
     x = len;
-    //printf("%u", start);
-    if (start >= ft_strlen(s))
+    if (start > ft_strlen(s))
     {
         d = ft_calloc(1, 1);
         return (d);

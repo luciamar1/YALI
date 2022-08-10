@@ -1,11 +1,6 @@
 #include "libft.h"
 
-char f(unsigned int i, char a)
-{
-    i = 0;
-    a = 'a';
-    return('k');
-}
+
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucia-ma <lucia-ma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciamar <luciamar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 21:25:00 by lucia-ma          #+#    #+#             */
-/*   Updated: 2022/08/09 04:57:12 by lucia-ma         ###   ########.fr       */
+/*   Updated: 2022/08/10 12:38:27 by luciamar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	if (!s)
+		return (NULL);
+	while (--n && *(char *)s == (char)(c & 0xff))
+		s++;
 	if (n == 0)
 		return (NULL);
-	while (*(char *)s && --n)
-	{
-		if (*(char *)s == (char)(c & 0xff))
-			return ((void *)s);
-		s++;
-	}
-	if (c == 0)
-		return ((void *)s);
-	return (NULL);
+	return ((char *)s);
 }
 
 // int main(void){

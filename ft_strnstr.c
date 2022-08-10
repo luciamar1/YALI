@@ -1,8 +1,8 @@
 #include "libft.h"
 #include <unistd.h>
-#include <stdio.h>
+#include <string.h>
 
-char *ft_strnstr(const char *s, const char *f, size_t n)
+/*char *ft_strnstr(const char *s, const char *f, size_t n)
 {
     if (*f == 0 || f == s)
         return ((char *)s);
@@ -31,12 +31,42 @@ char *ft_strnstr(const char *s, const char *f, size_t n)
     }
     return(NULL);
 }
+*/
+char *ft_strnstr(const char *s, const char *f, size_t n)
+{
+    if (!f)
+        return((char *)s);
+    while(*s++ && --n )
+    {
+        if(!ft_strncmp(s,f,n))
+            return((char *)s);
+    }
+    return (NULL);
+}
 
-// int     main(void)
-// {
-//         const char *s = "aaabcabcd";
-//         const char *f = "aabc";
-//         printf("MIO = %s", ft_strnstr(s, f, -1));
-//         printf("REAL = %s", strnstr(s, f, -1));
-//         return(0);
-// }
+/*char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	unsigned int	l;
+	size_t			i;
+
+	i = 0;
+	l = ft_strlen(little);
+	if (!l)
+		return ((char *)big);
+	while (big[i] && (i + l - 1) < len)
+	{
+		if (!ft_strncmp((big + i), little, l))
+			return ((char *)big + i);
+		++i;
+	}
+	return ((char *)0);
+}
+
+int     main(void)
+{
+         const char *s = "hola que tal";
+         const char *f = "que";
+         //printf("MIO = %s", ft_strnstr(s, f, -1));
+         printf("REAL = %s\n", ft_strnstr(s, f, 9));
+         return(0);
+}*/
